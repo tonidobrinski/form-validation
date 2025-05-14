@@ -1,0 +1,21 @@
+#registration-form-modal {
+  .modal-content {
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .modal-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+    text-align: center;
+  }
+}
+
+.registration-modal__title {
+  display: flex;
+  justify-content: center;
+}

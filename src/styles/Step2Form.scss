@@ -1,0 +1,49 @@
+#step2-form {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+    .form-control__title {
+      width: 100%;
+      justify-content: left;
+      padding-left: 1.5rem;
+    }
+
+    .avatar-image {
+      justify-content: left;
+    }
+
+    .image-container {
+      width: 100%;
+      padding-top: 1rem;
+    }
+
+    input {
+      align-content: center;
+    }
+  }
+
+  .avatar-preview {
+    margin-top: 1rem;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #e2e8f0;
+  }
+
+  .buttons-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+}

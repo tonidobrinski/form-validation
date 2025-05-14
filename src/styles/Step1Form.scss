@@ -1,0 +1,37 @@
+#step1-form {
+  padding: 2rem;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  .form-control {
+    margin-bottom: 1rem;
+    input {
+      border-radius: 1px solid gray;
+    }
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 0.5rem;
+
+    span {
+      border-color: var(--chakra-colors-chakra-border-color);
+    }
+  }
+
+  .submit-button {
+    margin-top: 2rem;
+    width: 100%;
+  }
+
+  .buttons-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+}
