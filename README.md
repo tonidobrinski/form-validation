@@ -1,58 +1,51 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# React Registration & Authentication App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Description
 
-Currently, two official plugins are available:
+This project is a multi-step registration and authentication web app built with React, TypeScript, Chakra UI, `react-hook-form`, and `zod`. It demonstrates:
+- A modal-based two-step sign-up form
+- Live validation with `zod` and form state persistence using `sessionStorage`
+- Avatar preview on upload
+- localStorage-based user login/logout logic
+- Protected routing using `react-router-dom`
+- Clean UI using Chakra UI and SCSS styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Setup Instructions
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   git clone https://github.com/tonidobrinski/form-validation.git
+   cd form-validation
+   npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ 2. **Start the project:**
+    npm run dev
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-=======
-# form-validation
->>>>>>> f07814b96cca9dd2fb6855fdc4fc2c28b349c672
+ 3. **Folder structure:**
+src/
+├── assets/               # Static images and icons
+├── auth/                 # Protected route authentication
+├── components/           # Reusable components
+│   ├── NavBar.tsx
+│   ├── RegistrationForm.tsx
+│   ├── Step1Form.tsx
+│   └── Step2Form.tsx
+│   ├── WelcomeMessage.tsx
+├── pages/                # Route pages
+│   └── FormPage.tsx
+│   ├── UserPage.tsx      # Protected route
+│   ├── HomePage.tsx
+├── schemas/              # Zod form schemas
+│   └── FormSchema.ts
+├── styles/               # SCSS styling files
+│   ├── App.scss
+│   ├── FormPage.scss
+│   ├── NavBar.scss
+│   ├── RegistrationForm.scss
+│   ├── Step1Form.scss
+│   └── Step2Form.scss
+│   ├── WelcomeMessage.scss
+├── types/                # TypeScript types
+│   └── types.ts
+├── utils/                # Utils
+│ App.tsx                 # App routes
+└── main.tsx              # Entry point
