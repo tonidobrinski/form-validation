@@ -2,7 +2,7 @@ import WelcomeMessage from "../components/WelcomeMessage";
 
 const Home = () => {
   return (
-    <div>
+    <div className="welcome-message__container">
       <WelcomeMessage />
     </div>
   );

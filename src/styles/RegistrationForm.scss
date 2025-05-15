@@ -19,3 +19,21 @@
   display: flex;
   justify-content: center;
 }
+
+.chakra-modal__content {
+  @media (max-width: 780px) {
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+.chakra-modal__content-container {
+  @media (max-width: 780px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
