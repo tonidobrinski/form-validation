@@ -86,7 +86,7 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
               mt={2}
             />
           )}
-          <div className="asd">
+          <div>
             <FormLabel className="form-control__title" cursor="pointer">
               {labelStrings.uploadAvatar}
             </FormLabel>
