@@ -4,7 +4,7 @@
     "welcomeMessage": "This project showcases a modern multi-step form built with React,Chakra UI, and form validation tools. Upload files, select interests,and enjoy a responsive UI.",
     "getStartedButton": "Get Started",
     "backButton": "Back",
-    "signUpButton": "Sign Up",
+    "signUpButton": "Sign up",
     "homeButton": "Home",
     "logoutButton": "Logout",
     "closeButton": "Close",
