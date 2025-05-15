@@ -78,7 +78,7 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
             </div>
           ) : (
             <Image
-              src="src\assets/userProfilePreview.png"
+              src="src/assets/userProfilePreview.png"
               className="avatar-image"
               alt="Avatar Preview"
               boxSize="125px"
