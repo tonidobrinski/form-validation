@@ -1,5 +1,6 @@
 import { Box, Button, Heading, Text, VStack, Avatar } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import labelStrings from "../utils/labelStrings.json";
 
 const UserPage = () => {
   const navigate = useNavigate();
@@ -41,10 +42,10 @@ const UserPage = () => {
           {localStorage.getItem("userLastName")}!
         </Heading>
         <Text fontSize="lg" color="gray.500">
-          Welcome to your account!
+          {labelStrings.welcomeMessageAfterSignUp}
         </Text>
         <Button colorScheme="teal" width="full" onClick={handleLogout}>
-          Log Out
+          {labelStrings.logoutButton}
         </Button>
       </VStack>
     </Box>

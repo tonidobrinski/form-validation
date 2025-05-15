@@ -1,6 +1,7 @@
 import { Box, Heading, Text, Stack, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import "../styles/WelcomeMessage.scss";
+import labelStrings from "../utils/labelStrings.json";
 
 const WelcomeMessage = () => {
   return (
@@ -10,14 +11,12 @@ const WelcomeMessage = () => {
           Welcome to the Form Submission Project
         </Heading>
         <Text fontSize={{ base: "md", md: "lg" }} maxW="600px" mx="auto">
-          This project showcases a modern multi-step form built with React,
-          Chakra UI, and form validation tools. Upload files, select interests,
-          and enjoy a responsive UI.
+          {labelStrings.welcomeMessage}
         </Text>
         <Box>
           <Link to="/form">
             <Button colorScheme="teal" size="lg" mt={4}>
-              Get Started
+              {labelStrings.getStartedButton}
             </Button>
           </Link>
         </Box>

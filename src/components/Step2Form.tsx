@@ -13,6 +13,7 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Step1FormData, Step2FormData } from "../types/types";
+import labelStrings from "../utils/labelStrings.json";
 import "../styles/Step2Form.scss";
 
 interface Step2FormProps {
@@ -87,7 +88,7 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
           )}
           <div className="asd">
             <FormLabel className="form-control__title" cursor="pointer">
-              Upload Avatar
+              {labelStrings.uploadAvatar}
             </FormLabel>
           </div>
           <Input
@@ -103,10 +104,10 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
 
         <div className="buttons-group">
           <Button onClick={onBack} colorScheme="gray">
-            Back
+            {labelStrings.backButton}
           </Button>
           <Button type="submit" colorScheme="teal">
-            Sign Up
+            {labelStrings.signUpButton}
           </Button>
         </div>
       </VStack>

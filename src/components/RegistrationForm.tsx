@@ -13,6 +13,7 @@ import {
   Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
+import labelStrings from "../utils/labelStrings.json";
 import "../styles/RegistrationForm.scss";
 
 const RegistrationForm = () => {
@@ -55,7 +56,7 @@ const RegistrationForm = () => {
   return (
     <>
       <Button onClick={onOpen} colorScheme="teal">
-        Sign up
+        {labelStrings.signUpButton}
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose} size="lg">

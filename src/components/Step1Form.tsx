@@ -16,6 +16,7 @@ import { createStep1Schema } from "../schemas/FormSchema";
 import { z } from "zod";
 import { Step1FormData } from "../types/types";
 import bcrypt from "bcryptjs";
+import labelStrings from "../utils/labelStrings.json"
 import "../styles/Step1Form.scss";
 
 interface Step1FormProps {
@@ -75,7 +76,7 @@ const Step1Form = ({ onNext, onClose }: Step1FormProps) => {
 
   return (
     <Box as="form" onSubmit={handleSubmit(onSubmit)} id="step1-form">
-      <FormLabel className="form-control step1-form__title">Account Info</FormLabel>
+      <FormLabel className="form-control step1-form__title">{labelStrings.accountInfo}</FormLabel>
       <FormControl isInvalid={!!errors.firstName} className="form-control">
         <Input placeholder="First name" {...register("firstName")} />
         <FormErrorMessage>{errors.firstName?.message}</FormErrorMessage>
@@ -108,7 +109,7 @@ const Step1Form = ({ onNext, onClose }: Step1FormProps) => {
       </FormControl>
 
       <FormControl isInvalid={!!errors.interests} className="form-control">
-        <FormLabel>Select your interests (max 2)</FormLabel>
+        <FormLabel>{labelStrings.selectInterests}</FormLabel>
         <Controller
           name="interests"
           control={control}

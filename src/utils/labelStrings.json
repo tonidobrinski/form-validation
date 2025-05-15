@@ -1,0 +1,12 @@
+{
+    "accountInfo": "Account Info",
+    "selectInterests": "Select your interests (max 2)",
+    "welcomeMessage": "This project showcases a modern multi-step form built with React,Chakra UI, and form validation tools. Upload files, select interests,and enjoy a responsive UI.",
+    "getStartedButton": "Get Started",
+    "backButton": "Back",
+    "signUpButton": "Sign Up",
+    "homeButton": "Home",
+    "logoutButton": "Logout",
+    "uploadAvatar": "Upload Avatar",
+    "welcomeMessageAfterSignUp": "Welcome to your account!"
+}
