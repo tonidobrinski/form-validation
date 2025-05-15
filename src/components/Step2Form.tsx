@@ -15,6 +15,8 @@ import { z } from "zod";
 import { Step1FormData, Step2FormData } from "../types/types";
 import labelStrings from "../utils/labelStrings.json";
 import "../styles/Step2Form.scss";
+import userProfilePreview from "../assets/userProfilePreview.png"
+
 
 interface Step2FormProps {
   onSubmit: (data: Step1FormData & Step2FormData) => void;
@@ -78,7 +80,7 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
             </div>
           ) : (
             <Image
-              src="src/assets/userProfilePreview.png"
+              src={userProfilePreview}
               className="avatar-image"
               alt="Avatar Preview"
               boxSize="125px"
