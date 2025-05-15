@@ -9,7 +9,6 @@ import {
   ModalBody,
   useDisclosure,
   Button,
-  Text,
   Box,
   Flex,
 } from "@chakra-ui/react";
@@ -68,22 +67,15 @@ const RegistrationForm = () => {
                 <Box
                   boxSize="8"
                   borderRadius="full"
-                  bg={step === 1 ? "teal.500" : "gray.300"}
+                  bg="teal.500"
                   color="white"
                   display="flex"
                   alignItems="center"
                   justifyContent="center"
                   fontWeight="bold"
                 >
-                  1
+                  {step > 1 ? "✓" : "1"}
                 </Box>
-                <Text
-                  mt={2}
-                  fontSize="sm"
-                  fontWeight={step === 1 ? "bold" : "normal"}
-                >
-                  Account Info
-                </Text>
               </Flex>
               <Box
                 flex={1}
@@ -104,13 +96,6 @@ const RegistrationForm = () => {
                 >
                   2
                 </Box>
-                <Text
-                  mt={2}
-                  fontSize="sm"
-                  fontWeight={step === 2 ? "bold" : "normal"}
-                >
-                  Upload Avatar
-                </Text>
               </Flex>
             </Flex>
           </Box>

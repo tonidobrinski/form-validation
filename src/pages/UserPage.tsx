@@ -27,7 +27,15 @@ const UserPage = () => {
         maxWidth="400px"
         align="center"
       >
-        <Avatar size="xl" name="User" src="src\assets\danAbramov.webp" />
+        {(localStorage.getItem("userImage") as string) ? (
+          <Avatar
+            size="xl"
+            name="User"
+            src={localStorage.getItem("userImage") as string}
+          />
+        ) : (
+          <Avatar size="xl" name="User" src="src\assets\danAbramov.webp" />
+        )}
         <Heading as="h1" size="lg" color="teal.600">
           Hello, {localStorage.getItem("userFirstName")}{" "}
           {localStorage.getItem("userLastName")}!

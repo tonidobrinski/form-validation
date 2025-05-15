@@ -7,14 +7,21 @@
   .form-control {
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
     justify-content: center;
     align-items: center;
 
     .form-control__title {
+      display: flex;
+      justify-content: center;
       width: 100%;
-      justify-content: left;
-      padding-left: 1.5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid rgb(118, 118, 118);
+      border-radius: 8px;
+    }
+
+    .form-control__input {
+      margin-top: 1rem;
     }
 
     .avatar-image {
@@ -24,6 +31,7 @@
     .image-container {
       width: 100%;
       padding-top: 1rem;
+      display: contents;
     }
 
     input {

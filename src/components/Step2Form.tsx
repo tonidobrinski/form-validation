@@ -49,6 +49,7 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
       const fileReader = new FileReader();
       fileReader.onloadend = () => {
         setAvatarPreview(fileReader.result as string);
+        localStorage.setItem("userImage", fileReader.result as string);
       };
       fileReader.readAsDataURL(file);
     }
@@ -62,25 +63,41 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
     <Box as="form" onSubmit={handleSubmit(onSubmitHandler)} id="step2-form">
       <VStack spacing={4}>
         <FormControl isInvalid={!!errors.avatar} className="form-control">
-          <FormLabel className="form-control__title">Upload Avatar</FormLabel>
-          <Input
-            type="file"
-            accept="image/*"
-            {...register("avatar")}
-            onChange={handleFileChange}
-          />
-          {avatarPreview && (
+          {avatarPreview ? (
             <div className="image-container">
               <Image
                 src={avatarPreview}
                 className="avatar-image"
                 alt="Avatar Preview"
-                boxSize="100px"
+                boxSize="125px"
                 objectFit="cover"
+                rounded="full"
                 mt={2}
               />
             </div>
+          ) : (
+            <Image
+              src="src\assets/userProfilePreview.png"
+              className="avatar-image"
+              alt="Avatar Preview"
+              boxSize="125px"
+              objectFit="cover"
+              mt={2}
+            />
           )}
+          <div className="asd">
+            <FormLabel className="form-control__title" cursor="pointer">
+              Upload Avatar
+            </FormLabel>
+          </div>
+          <Input
+            className="form-control__input"
+            type="file"
+            accept="image/*"
+            {...register("avatar")}
+            onChange={handleFileChange}
+            cursor="pointer"
+          />
           <FormErrorMessage>{errors.avatar?.message}</FormErrorMessage>
         </FormControl>
 
