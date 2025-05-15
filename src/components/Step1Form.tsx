@@ -75,6 +75,7 @@ const Step1Form = ({ onNext, onClose }: Step1FormProps) => {
 
   return (
     <Box as="form" onSubmit={handleSubmit(onSubmit)} id="step1-form">
+      <FormLabel className="form-control step1-form__title">Account Info</FormLabel>
       <FormControl isInvalid={!!errors.firstName} className="form-control">
         <Input placeholder="First name" {...register("firstName")} />
         <FormErrorMessage>{errors.firstName?.message}</FormErrorMessage>

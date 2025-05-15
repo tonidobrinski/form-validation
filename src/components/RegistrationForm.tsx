@@ -73,6 +73,8 @@ const RegistrationForm = () => {
                   alignItems="center"
                   justifyContent="center"
                   fontWeight="bold"
+                  fontSize="1.1rem"
+                  padding="1.3rem"
                 >
                   {step > 1 ? "✓" : "1"}
                 </Box>
@@ -93,6 +95,8 @@ const RegistrationForm = () => {
                   alignItems="center"
                   justifyContent="center"
                   fontWeight="bold"
+                  fontSize="1.1rem"
+                  padding="1.3rem"
                 >
                   2
                 </Box>

@@ -3,6 +3,7 @@
   background-color: #f9fafb;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding-top: 1rem;
 
   .form-control {
     margin-bottom: 1rem;
@@ -18,7 +19,7 @@
     gap: 1rem;
     margin-top: 0.5rem;
 
-    span {
+    .chakra-checkbox__control {
       border-color: var(--chakra-colors-chakra-border-color);
     }
   }
@@ -33,5 +34,12 @@
     width: 100%;
     justify-content: space-between;
     margin-top: 2rem;
+  }
+
+  .step1-form__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
   }
 }

@@ -18,6 +18,10 @@
       margin-bottom: 1rem;
       border: 1px solid rgb(118, 118, 118);
       border-radius: 8px;
+      padding-inline: 1rem;
+    }
+    .form-control__title:hover {
+      border-color: var(--chakra-colors-chakra-border-color);
     }
 
     .form-control__input {
