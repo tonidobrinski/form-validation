@@ -16,7 +16,7 @@ import { createStep1Schema } from "../schemas/FormSchema";
 import { z } from "zod";
 import { Step1FormData } from "../types/types";
 import bcrypt from "bcryptjs";
-import labelStrings from "../utils/labelStrings.json"
+import labelStrings from "../utils/labelStrings.json";
 import "../styles/Step1Form.scss";
 
 interface Step1FormProps {
@@ -76,7 +76,9 @@ const Step1Form = ({ onNext, onClose }: Step1FormProps) => {
 
   return (
     <Box as="form" onSubmit={handleSubmit(onSubmit)} id="step1-form">
-      <FormLabel className="form-control step1-form__title">{labelStrings.accountInfo}</FormLabel>
+      <FormLabel className="form-control step1-form__title">
+        {labelStrings.accountInfo}
+      </FormLabel>
       <FormControl isInvalid={!!errors.firstName} className="form-control">
         <Input placeholder="First name" {...register("firstName")} />
         <FormErrorMessage>{errors.firstName?.message}</FormErrorMessage>
@@ -135,10 +137,10 @@ const Step1Form = ({ onNext, onClose }: Step1FormProps) => {
       </FormControl>
       <div className="buttons-group">
         <Button onClick={onClose} colorScheme="gray">
-          Close
+          {labelStrings.closeButton}
         </Button>
         <Button type="submit" colorScheme="teal" className="form-button">
-          Next
+          {labelStrings.nextButton}
         </Button>
       </div>
     </Box>

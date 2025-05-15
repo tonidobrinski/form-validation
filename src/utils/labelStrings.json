@@ -7,6 +7,8 @@
     "signUpButton": "Sign Up",
     "homeButton": "Home",
     "logoutButton": "Logout",
+    "closeButton": "Close",
+    "nextButton": "Next",
     "uploadAvatar": "Upload Avatar",
     "welcomeMessageAfterSignUp": "Welcome to your account!"
 }
