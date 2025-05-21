@@ -28,6 +28,8 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
   const {
     register,
     handleSubmit,
+    setValue,
+    trigger,
     formState: { errors },
   } = useForm<Step2FormData>({
     resolver: zodResolver(
@@ -56,6 +58,10 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
       };
       fileReader.readAsDataURL(file);
     }
+
+    // Update the form state and re-validate the field
+    setValue("avatar", e.target.files as FileList, { shouldValidate: true });
+    trigger("avatar");
   };
 
   const onSubmitHandler: SubmitHandler<Step2FormData> = (data) => {
