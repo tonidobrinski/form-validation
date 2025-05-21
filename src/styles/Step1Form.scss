@@ -22,6 +22,12 @@
     .chakra-checkbox__control {
       border-color: var(--chakra-colors-chakra-border-color);
     }
+
+    label {
+      @media (max-width: 780px) {
+        width: 4.5rem;
+      }
+    }
   }
 
   .submit-button {
