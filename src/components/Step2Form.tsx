@@ -11,12 +11,11 @@ import {
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { Step1FormData, Step2FormData } from "../types/types";
 import labelStrings from "../utils/labelStrings.json";
 import "../styles/Step2Form.scss";
-import userProfilePreview from "../assets/userProfilePreview.png"
-
+import userProfilePreview from "../assets/userProfilePreview.png";
+import { step2Schema } from "../schemas/FileUploadSchema";
 
 interface Step2FormProps {
   onSubmit: (data: Step1FormData & Step2FormData) => void;
@@ -25,27 +24,16 @@ interface Step2FormProps {
 
 const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+
   const {
     register,
     handleSubmit,
-    setValue,
-    trigger,
     formState: { errors },
   } = useForm<Step2FormData>({
-    resolver: zodResolver(
-      z.object({
-        avatar: z
-          .instanceof(FileList)
-          .refine(
-            (files) => files.length === 1,
-            "You must select exactly one file."
-          )
-          .refine(
-            (files) => files[0]?.type.startsWith("image/"),
-            "Only image files are allowed."
-          ),
-      })
-    ),
+    resolver: zodResolver(step2Schema),
+    defaultValues: {
+      avatar: undefined as unknown as FileList,
+    },
   });
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -58,10 +46,6 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
       };
       fileReader.readAsDataURL(file);
     }
-
-    // Update the form state and re-validate the field
-    setValue("avatar", e.target.files as FileList, { shouldValidate: true });
-    trigger("avatar");
   };
 
   const onSubmitHandler: SubmitHandler<Step2FormData> = (data) => {
