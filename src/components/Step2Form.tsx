@@ -24,13 +24,10 @@ interface Step2FormProps {
 
 const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
   const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
-  const [fileSelected, setFileSelected] = useState(false);
-
   const {
     register,
     handleSubmit,
     formState: { errors },
-    trigger,
   } = useForm<Step2FormData>({
     resolver: zodResolver(step2Schema),
   });
@@ -38,23 +35,16 @@ const Step2Form = ({ onSubmit, onBack }: Step2FormProps) => {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setAvatarPreview(reader.result as string);
-        localStorage.setItem("userImage", reader.result as string);
+      const fileReader = new FileReader();
+      fileReader.onloadend = () => {
+        setAvatarPreview(fileReader.result as string);
+        localStorage.setItem("userImage", fileReader.result as string);
       };
-      reader.readAsDataURL(file);
-
-      // Add delay to allow mobile browsers to update the file input fully
-      setTimeout(() => {
-        setFileSelected(true);
-        trigger("avatar");
-      }, 100);
+      fileReader.readAsDataURL(file);
     }
   };
 
   const onSubmitHandler: SubmitHandler<Step2FormData> = (data) => {
-    if (!fileSelected) return;
     onSubmit(data as Step1FormData & Step2FormData);
   };
 
